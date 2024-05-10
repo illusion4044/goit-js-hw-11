@@ -5,8 +5,8 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import { createGalleryItemMarkup } from './render-functions.js';
-import { fetchPhotosByQuery } from './pixabay-api.js';
+import { createGalleryItemMarkup } from './js/render-functions.js';
+import { fetchPhotosByQuery } from './js/pixabay-api.js';
 
 
 const searchFormEl = document.querySelector('.js-search-form');
@@ -55,10 +55,10 @@ function onSearchFormSubmit(event) {
             galleryEl.innerHTML = createGalleryItemMarkup(imagesData.hits);
 
             if (lightbox) {
-              lightbox.destroy(); 
+            lightbox.destroy(); 
             }
             lightbox = new SimpleLightbox('.js-gallery a', {
-              captionDelay: 250,
+            captionDelay: 250,
             });
         })
         .catch(error => {
