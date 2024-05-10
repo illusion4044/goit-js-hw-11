@@ -55,7 +55,7 @@ function onSearchFormSubmit(event) {
             galleryEl.innerHTML = createGalleryItemMarkup(imagesData.hits);
 
             if (lightbox) {
-              lightbox.destroy(); // Знищуємо попередній екземпляр
+              lightbox.destroy(); 
             }
             lightbox = new SimpleLightbox('.js-gallery a', {
               captionDelay: 250,
